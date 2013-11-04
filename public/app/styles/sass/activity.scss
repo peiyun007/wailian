@@ -1,0 +1,83 @@
+#main-region {
+	position: relative;
+}
+.activity_page_container{
+	margin-top : 20px;
+}
+.activity_list_item {
+	height : 170px;
+	margin-top : 20px;
+	padding-bottom : 20px;
+	border-bottom: #d6d4d2 dashed 1px;
+	.activity_item_img {
+		background: url(#{$baseImageUrl}/picc.jpg);
+		width: 120px;
+		height: 112px;
+		float: left;
+		display: inline-block;
+	}
+	.activity_item_content {
+		float: left;
+		margin-left: 20px;
+		font-family: #{$yaheifFontFamily};
+		line-height: 24px;
+		font-size: 16px;
+		color : #{$baseFontColor5};
+		span {
+			display: block;
+		}
+		.activity_item_community_item {
+			float: left;
+			position:relative;
+			.activity_item_community_list_item {
+				width: 40px;
+				margin-right: 5px; 
+				span {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+.activity_item_img_short {
+	background: url(#{$baseImageUrl}/picc.jpg);
+	width: 30px;
+	height: 30px;
+	float: left;
+	display: inline-block;
+}
+#activity_detail {
+	position : fixed;
+	right: 0px;
+	top: 75px;
+	width : 0px;
+	#activity_detail_container {
+		overflow: hidden;
+	}
+	.panel-heading {
+		a {
+			color : #fff;
+		}
+	}
+	p {
+		line-height: 20px;
+		font-family: #{$yaheifFontFamily};
+		font-size: 14px;
+	}
+	.build_form {
+		margin: 10px 30px;
+	}
+	.activity_btn_group {
+		position: absolute;
+		right: 40px;
+	}
+}
+.nested_select {
+	.form-control {
+		width: 40%;
+		display: inline-block;
+	}
+	.form-control:last-child {
+		margin-left: 40px;
+	}
+}

@@ -1,0 +1,19 @@
+<a class="activity_item_community_list_item">
+  <span class="activity_item_img_short" status=<% status %>></span>
+ </a>
+<% if(status ==0){ %>
+	<ul class="dropdown-menu">
+		<li><a href="javascript:void(0)" data-handler="notice">通知企业创建人申请</a></li>
+	</ul>
+<% } %>
+<% if(status ==1 ) { %>
+	<ul class="dropdown-menu">
+		<li><a href="javascript:void(0)" data-handler="apply">我要申请</a></li>
+	</ul>
+<% } %>
+<% if(status ==2) { %>
+	<ul class="dropdown-menu">
+		<li><a href="javascript:void(0)">已申请</a></li>
+	</ul>
+<% } %>
+

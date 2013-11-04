@@ -1,0 +1,13 @@
+<% if(routerData.task_id) { %>
+<ul id="task_detail_tab" class="breadcrumb">
+	<li><a  href="#task?task_id=<%= routerData.task_id %>&detail_type=Info" data-trigger="false">详细信息</a></li>
+	<li><a  href="#task?task_id=<%= routerData.task_id %>&detail_type=Comment" data-trigger="false">评论</a></li>
+	<li><a href="#task?task_id=<%= routerData.task_id %>&detail_type=ApplicatorCommunity" data-trigger="false">参与的社团</a></li>
+	<li><a href="#task?task_id=<%= routerData.task_id %>&detail_type=ApplicatorSingle" data-trigger="false">参与的个人</a></li>
+</ul>
+<% } else { %>
+	<ul id="community_wiki_detail_tab">
+		<li href="">新建企业需求</li>
+	</ul>
+<% } %>
+<div id="task_detail_container"></div>

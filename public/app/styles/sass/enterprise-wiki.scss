@@ -1,0 +1,62 @@
+#main-region {
+	position: relative;
+}
+.enterprise_wiki_list_item {
+	height : 140px;
+	margin-top : 20px;
+	padding-bottom : 20px;
+	border-bottom: #d6d4d2 dashed 1px;
+	.enterprise_wiki_item_img {
+		background: url(#{$baseImageUrl}/picc.jpg);
+		width: 120px;
+		height: 112px;
+		float: left;
+		display: inline-block;
+	}
+	.enterprise_wiki_item_content {
+		float: left;
+		margin-left: 20px;
+		font-family: #{$yaheifFontFamily};
+		line-height: 24px;
+		font-size: 16px;
+		color : #{$baseFontColor5};
+		span {
+			display: block;
+		}
+	}
+}
+#enterprise_wiki_detail {
+	position : fixed;
+	right: 0px;
+	top: 75px;
+	width : 0px;
+	#enterprise_wiki_detail_container {
+		overflow: hidden;
+	}
+	.panel-heading {
+		a {
+			color : #fff;
+		}
+	}
+	p {
+		line-height: 20px;
+		font-family: #{$yaheifFontFamily};
+		font-size: 14px;
+	}
+	.build_form {
+		margin: 10px 30px;
+	}
+	.enterprise_btn_group {
+		position: absolute;
+		right: 40px;
+	}
+}
+.nested_select {
+	.form-control {
+		width: 40%;
+		display: inline-block;
+	}
+	.form-control:last-child {
+		margin-left: 40px;
+	}
+}

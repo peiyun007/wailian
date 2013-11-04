@@ -1,0 +1,22 @@
+<a href="http://www.lagou.com/" class="logo">
+</a>
+
+<ul class="breadcrumb top_nav">
+	<li><a href="#home">首页</a></li>
+	<li><a href="#activity">社团需求</a></li>
+	<li><a href="#task">企业任务</a></li>
+	<li><a href="#community_wiki">社团百科</a></li>
+	<li><a href="#enterprise_wiki">企业百科</a></li>
+	<li><a href="#extend">推广</a></li>
+</ul>
+<% if(user_id == -1) { %>
+<ul class="login">
+	<li><a href="http://192.168.1.104/php_news2/login" rel="nofollow" >登录</a></li>
+	<li><a href="http://192.168.1.104/php_news2/login/register" rel="nofollow" >注册</a></li>
+</ul>
+<% } else { %>
+	<ul class="login">
+		<li><a class="login_info" href="javascript:void(0)">欢迎您：<%= user_name %></a></li>
+		<li><a href="http://192.168.1.104/php_news2/login/doLogout">退出登录</a></li>
+	</ul>
+<% } %>

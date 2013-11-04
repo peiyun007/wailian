@@ -1,0 +1,53 @@
+	<h3>社团信息</h3>
+	<p>社团名称: <%= st_detail[0].st_name %></p>
+	<p>社团种类: <%= st_detail[0].st_type %></p>
+	<p>社团所在地: <%= st_detail[0].province_name %>-<%= st_detail[0].city_name%></p>
+	<p>社团描述: <%= st_detail[0].description %></p>
+	<p>社团信息创建人: <%= st_detail[0].create_user %></p>
+	<p>点击次数: <%= st_detail[0].click_nums %></p>
+	<h3>团长信息</h3>
+	<p>团长： <%= st_detail[0].leader %></p>
+
+	<h3>社团成员</h3>
+	<table class="table table-border">
+		<thead><th>成员</th></thead>
+		<tbody>
+		<% _.each(st_members, function(value,key){ %> 
+			<tr>
+				<td><%= value.user_name %></td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>
+
+	<h3>参加过的企业活动</h3>
+	<table class="table table-border">
+		<thead><th>活动名称</th></thead>
+		<tbody>
+		<% _.each(st_act_qyNeed, function(value,key){ %> 
+			<tr>
+				<td><%= value.st_need_name %></td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>
+
+	<h3>寻求赞助的活动</h3>
+	<table class="table table-border">
+		<thead>
+			<th>名称</th>
+			<th>金额</th>
+			<th>发布人</th>
+			<th>发布日期</th>
+		</thead>
+		<tbody>
+		<% _.each(st_need, function(value,key){ %> 
+			<tr>
+				<td><%= value.title %></td>
+				<td><%= value.money %></td>
+				<td><%= value.publish_user %></td>
+				<td><%= value.publish_date %></td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>

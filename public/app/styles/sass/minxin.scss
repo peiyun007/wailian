@@ -1,0 +1,15 @@
+//add
+$baseFontFamily:        verdana, "SimSun", "NSimSun", sans-serif !default;
+$yaheifFontFamily:       verdana, "Microsoft YaHei", "SimHei", "SimSun" !default;
+
+$backgroundColor: #fafafa !default;
+$baseFontColor3: #333;
+$baseFontColor5: #555;
+$baseFontColor9: #999;
+
+$baseColorGreen: #019875;
+
+$baseImageUrl:  "http://www.myweb.com/images" !default;
+$baselogoUrl: "logo.png";
+$logoUrl:  #{$baseImageUrl}/#{$baselogoUrl}; 
+

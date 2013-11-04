@@ -1,0 +1,24 @@
+<h3>社团经历</h3>
+<% if(routerData.edit) {%>
+	<a href="javascript:void(0)" data-handler="Add">添加</a>
+	<div id="edit_container" style="display:none;">
+		<sapn>起始时间：</sapn><input name="start_time"></input>
+		<span>结束时间：</span><input name="end_time"></input>
+		<p><span>描述：</span><textarea name="description"></textarea></p>
+		<a  href="javascript:void(0)" class="btn btn-info" data-handler="Submit">提交</a>
+		<a href="javascript:void(0)" class="btn btn-info" data-handler="Cancel">取消</a>
+	</div>
+<% } %>
+<ul>
+<% _.each(data, function(value,key){ %>
+	<li data-id = <%= value.id  %>>
+		<sapn>起始时间：</sapn><span><%= value.start_time %></span>
+		<span>结束时间：</span><span><%= value.end_time %></span>
+		<p><span>描述：</span><%= value.description %></p>
+		<% if(routerData.edit) {%>
+			<a href="javascript:void(0)" data-handler="Update">修改</a>
+			<a href="javascript:void(0)" data-handler="Delete">删除</a>
+		<% } %>
+	</li>
+<%}) %>
+</ul>

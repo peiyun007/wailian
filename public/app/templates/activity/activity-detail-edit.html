@@ -1,0 +1,45 @@
+<li><h3>基本信息编辑</h3></li>
+<li>
+	<div id="activity_form_container">
+	</div>
+</li>
+<li>
+	<% if(status == 'edit') { %>
+	<table class="table table-border">
+		<thead><th>批准资助的企业</th></thead>
+		<tbody>
+		<% _.each(qy_list, function(value,key){ %> 
+			<% if(value.status == 1){ %>
+			<tr data-id=<%= value.qy_id %>>
+				<td><a href="#enterprise/enterprise_id=<%= value.qy_id %>" target="_blank"><%= value.name %></a></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>
+</li>
+<li>
+<% if(status == 'edit') { %>
+	<table class="table table-border">
+		<thead><th>申请资助的企业</th></thead>
+		<tbody>
+		<% _.each(qy_list, function(value,key){ %> 
+			<% if(value.status == 0) { %>
+			<tr data-id=<%= value.qy_id %>>
+				<td><a href="#enterprise/enterprise_id=<%= value.qy_id %>" target="_blank"><%= value.name %></a></td>
+				<td><a class="btn btn-info" href="javascript:void(0)" data-handler="allow">颁布</a></td>
+				<td><a class="btn btn-warning" href="javascript:void(0)" data-handler="reject">拒绝</a></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>
+</li>
+<li style="height : 60px; margin-bottom : 10px;">
+<div class="activity_btn_group">
+	<a type="button" class="btn btn-success" href="javascript:void(0)" data-handler="submit">提交</a>
+	<a type="button" class="btn btn-default" href="javascript:void(0)" data-handler="cancel">取消</a>
+</div>
+</li>

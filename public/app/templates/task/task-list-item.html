@@ -1,0 +1,20 @@
+<span class="task_item_img"></span>
+<div class="task_item_content">
+	<span>任务名称:<%= title %></span>
+	<span>悬赏金额:<%= money %></span>
+	<span>创建时间:<%= publish_date %></span>
+	<span>地区: <%= province_name %>-<%= city_name%></span>
+	<span class="task_community_info_title">我的社团：</span>
+	<ul class="task_community_info_view " data-id="<%= id %>"></ul>
+
+	<label class= "clearfix">
+		<a class="detail_btn"  href="#task?task_id=<%= id %>">查看详情</a>
+	<label>
+	<% if(own_info == '1') { %>
+		<a href="javascript:void(0)">已批准</a>
+	<% } if (own_info == '0') {%>
+		<a href="javascript:void(0)" class="apply_task_btn">已申请</a>
+	<% } if (own_info == '-1')  {%>
+		<a href="javascript:void(0)" class="apply_task_btn">我要申请</a>
+	<% } %>
+</div>

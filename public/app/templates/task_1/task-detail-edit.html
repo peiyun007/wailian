@@ -1,0 +1,78 @@
+<li><h3>基本信息编辑</h3></li>
+<li>
+	<div id="task_form_container">
+	</div>
+</li>
+<li>
+<% if(status == 'edit') { %>
+	<table class="table table-border">
+		<thead><th>批准参加的社团</th></thead>
+		<tbody>
+		<% _.each(st_list, function(value,key){ %> 
+			<% if(value.status == 0){ %>
+			<tr data-id=<%= value.st_id %>>
+				<td><a href="#community/commnity_id=<%= value.st_id %>" target="_blank"><%= value.name %></a></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>
+</li>
+<li>
+<% if(status == 'edit') { %>
+	<table class="table table-border">
+		<thead><th>申请参加的社团</th></thead>
+		<tbody>
+		<% _.each(st_list, function(value,key){ %> 
+			<% if(value.status == 1) { %>
+			<tr data-id=<%= value.st_id %>>
+				<td><a href="#community/commnity_id=<%= value.st_id %>" target="_blank"><%= value.name %></a></td>
+				<td><a class="btn btn-info" href="javascript:void(0)" data-handler="allow">批准加入</a></td>
+				<td><a class="btn btn-warning" href="javascript:void(0)" data-handler="reject">拒绝加入</a></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>
+</li>
+<% if(status == 'edit') { %>
+	<table class="table table-border">
+		<thead><th>批准参加的个人</th></thead>
+		<tbody>
+		<% _.each(user_list, function(value,key){ %> 
+			<% if(value.status == '1'){ %>
+			<tr data-id=<%= value.user_id %>>
+				<td><a href="#community/commnity_id=<%= value.user_id %>" target="_blank"><%= value.true_name %></a></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>
+</li>
+<li>
+<% if(status == 'edit') { %>
+	<table class="table table-border">
+		<thead><th>申请参加的个人</th></thead>
+		<tbody>
+		<% _.each(user_list, function(value,key){ %> 
+			<% if(value.status == '0') { %>
+			<tr data-id=<%= value.user_id %>>
+				<td><a href="#community/commnity_id=<%= value.user_id %>" target="_blank"><%= value.true_name %></a></td>
+				<td><a class="btn btn-info" href="javascript:void(0)" data-handler="allowUser">批准加入</a></td>
+				<td><a class="btn btn-warning" href="javascript:void(0)" data-handler="rejectUser">拒绝加入</a></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>
+</li>
+<li style="height : 60px; margin-bottom : 10px;">
+<div class="task_btn_group">
+	<a type="button" class="btn btn-success" href="javascript:void(0)" data-handler="submit">提交</a>
+	<a type="button" class="btn btn-default" href="javascript:void(0)" data-handler="cancel">取消</a>
+</div>
+</li>

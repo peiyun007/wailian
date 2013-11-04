@@ -1,0 +1,28 @@
+<table class="table table-border">
+	<thead><th>批准参加的个人</th></thead>
+	<tbody>
+	<% _.each(user_list, function(value,key){ %> 
+		<% if(value.status == '1'){ %>
+		<tr data-id=<%= value.user_id %>>
+			<td><a href="#community/commnity_id=<%= value.user_id %>" target="_blank"><%= value.true_name %></a></td>
+		</tr>
+		<% } %>
+	<% }) %>
+	</tbody>
+</table>
+<% if(routerData.edit) { %>
+	<table class="table table-border">
+		<thead><th>申请参加的个人</th></thead>
+		<tbody>
+		<% _.each(user_list, function(value,key){ %> 
+			<% if(value.status == '0') { %>
+			<tr data-id=<%= value.user_id %>>
+				<td><a href="#community/commnity_id=<%= value.user_id %>" target="_blank"><%= value.true_name %></a></td>
+				<td><a class="btn btn-info" href="javascript:void(0)" data-handler="AllowUser">批准加入</a></td>
+				<td><a class="btn btn-warning" href="javascript:void(0)" data-handler="RejectUser">拒绝加入</a></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>

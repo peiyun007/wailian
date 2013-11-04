@@ -1,0 +1,13 @@
+<div id="community_wiki_detail_info">
+	<h3>基本信息</h3>
+	<% if(routerData.edit) {%>
+		<a href="javascript:void(0)" data-handler="Edit">编辑</a>
+	<% } %>
+	<p>名称: <%= st_detail[0].st_name %></p>
+	<p>种类: <%= st_detail[0].st_type %></p>
+	<p>所在地: <%= st_detail[0].province_name %>-<%= st_detail[0].city_name%></p>
+	<p>描述: <%= st_detail[0].description %></p>
+	<p>信息创建人: <%= st_detail[0].create_user %></p>
+	<p>点击次数: <%= st_detail[0].click_nums %></p>
+</div>
+<div id="form_builder_container"></div>

@@ -1,0 +1,19 @@
+<h3>寻求赞助的活动</h3>
+<table class="table table-border">
+	<thead>
+		<th>名称</th>
+		<th>金额</th>
+		<th>发布人</th>
+		<th>发布日期</th>
+	</thead>
+	<tbody>
+	<% _.each(st_need, function(value,key){ %> 
+		<tr>
+			<td><%= value.title %></td>
+			<td><%= value.money %></td>
+			<td><%= value.publish_user %></td>
+			<td><%= value.publish_date %></td>
+		</tr>
+	<% }) %>
+	</tbody>
+</table>

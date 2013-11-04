@@ -1,0 +1,11 @@
+<h3>参加过的企业活动</h3>
+<table class="table table-border">
+	<thead><th>活动名称</th></thead>
+	<tbody>
+	<% _.each(st_act_qyNeed, function(value,key){ %> 
+		<tr>
+			<td><%= value.st_need_name %></td>
+		</tr>
+	<% }) %>
+	</tbody>
+</table>

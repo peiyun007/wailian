@@ -1,0 +1,36 @@
+	<p>企业名称: <%= qy_detail[0].name %></p>
+	<p>企业所在地: <%= qy_detail[0].province_name %>-<%= qy_detail[0].city_name%></p>
+	<p>企业描述: <%= qy_detail[0].description %></p>
+	<p>企业信息创建人: <%= qy_detail[0].create_user %></p>
+	<p>点击次数: <%= qy_detail[0].click_nums %></p>
+	<h3>赞助过的社团</h3>
+	<table class="table table-border">
+		<thead><th>社团活动名称</th></thead>
+		<tbody>
+		<% _.each(qy_act_stNeed, function(value,key){ %> 
+			<tr>
+				<td><%= value.st_need_name %></td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>
+
+	<h3>发布的活动</h3>
+	<table class="table table-border">
+		<thead>
+			<th>名称</th>
+			<th>金额</th>
+			<th>发布人</th>
+			<th>发布日期</th>
+		</thead>
+		<tbody>
+		<% _.each(qy_need, function(value,key){ %> 
+			<tr>
+				<td><%= value.title %></td>
+				<td><%= value.money %></td>
+				<td><%= value.publish_user %></td>
+				<td><%= value.publish_date %></td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>

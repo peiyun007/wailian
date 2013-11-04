@@ -1,0 +1,14 @@
+<% if(routerData.community_id) { %>
+<ul id="community_wiki_detail_tab" class="breadcrumb">
+	<li><a  href="#community_wiki?community_id=<%= routerData.community_id %>&detail_type=Info" data-trigger="false">详细信息</a></li>
+	<li><a href="#community_wiki?community_id=<%= routerData.community_id %>&detail_type=Member" data-trigger="false">成员</a></li>
+	<li><a href="#community_wiki?community_id=<%= routerData.community_id %>&detail_type=Experience" data-trigger="false">社团经历</a></li>
+	<li><a href="#community_wiki?community_id=<%= routerData.community_id %>&detail_type=Task" data-trigger="false">参加过的企业活动</a></li>
+	<li><a href="#community_wiki?community_id=<%= routerData.community_id %>&detail_type=Activity" data-trigger="false">寻求赞助的活动</a></li>
+</ul>
+<% } else { %>
+	<ul id="community_wiki_detail_tab">
+		<li href="">新建社团</li>
+	</ul>
+<% } %>
+<div id="community_wiki_detail_container"></div>

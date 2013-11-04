@@ -1,0 +1,21 @@
+	<h3>社团活动信息</h3>
+	<p>活动名称: <%= stneed_detail[0].title %></p>
+	<p>寻求资助: <%= stneed_detail[0].money %></p>
+	<p>社团名称: <%= stneed_detail[0].qy_name %></p>
+	<p>社团所在地: <%= stneed_detail[0].province_name %>-<%= stneed_detail[0].city_name%></p>
+	<p>活动创建人: <%= stneed_detail[0].publisher_name %></p>
+	<p>点击次数: <%= stneed_detail[0].click_nums %></p>
+	<p>活动描述: <%= stneed_detail[0].description %></p>
+
+	<h3>申请的企业</h3>
+	<table class="table table-border">
+		<tbody>
+		<% _.each(stneed_detail[0].qy_list, function(value,key){ %> 
+			<% if(value.status == 1) { %>
+			<tr>
+				<td><%= value.name %></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>

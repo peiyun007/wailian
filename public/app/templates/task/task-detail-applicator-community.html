@@ -1,0 +1,28 @@
+<table class="table table-border">
+	<thead><th>批准参加的社团</th></thead>
+	<tbody>
+	<% _.each(st_list, function(value,key){ %> 
+		<% if(value.status == '1'){ %>
+		<tr data-id=<%= value.st_id %>>
+			<td><a href="#community/commnity_id=<%= value.st_id %>" target="_blank"><%= value.name %></a></td>
+		</tr>
+		<% } %>
+	<% }) %>
+	</tbody>
+</table>
+<% if(routerData.edit) { %>
+	<table class="table table-border">
+		<thead><th>申请参加的社团</th></thead>
+		<tbody>
+		<% _.each(st_list, function(value,key){ %> 
+			<% if(value.status == '0') { %>
+			<tr data-id=<%= value.st_id %>>
+				<td><a href="#community/commnity_id=<%= value.st_id %>" target="_blank"><%= value.name %></a></td>
+				<td><a class="btn btn-info" href="javascript:void(0)" data-handler="Allow">批准加入</a></td>
+				<td><a class="btn btn-warning" href="javascript:void(0)" data-handler="Reject">拒绝加入</a></td>
+			</tr>
+			<% } %>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>

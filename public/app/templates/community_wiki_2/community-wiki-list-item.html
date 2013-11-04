@@ -1,0 +1,13 @@
+<span class="community_wiki_item_img"></span>
+<div class="community_wiki_item_content">
+	<span>社团名称:<%= name %></span>
+	<span>地区: <%= province_name %>-<%= city_name%></span>
+	<span>
+		<a class="detail_btn" data-trigger="false" href="#community_wiki?community_id=<%= id %>">查看详情</a>
+		<% if(status == -1 || status == '-1'){ %>
+			<a class="join_btn" href="javascript:void(0)" data-handler="join">我要加入</a>
+		<% } else { %>
+			<a href="javascript:void(0)">已申请加入</a>
+		<% } %>
+	<span>
+</div>

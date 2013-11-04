@@ -1,0 +1,42 @@
+<h3>团长信息</h3>
+<p>团长： <%= st_detail[0].leader %></p>
+
+<h3>社团成员</h3>
+
+
+<% if(routerData.edit) { %>
+	<table class="table table-border">
+		<thead><th>成员</th></thead>
+		<tbody>
+		<% _.each(st_members, function(value,key){ %> 
+			<tr data-id=<%= value.user_id %>>
+				<td><%= value.user_name %></td>
+				<td><a class="btn btn-warning" href="javascript:void(0)" data-handler="Delete">移除</a></td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>
+	<table class="table table-border">
+		<thead><th>申请加入的成员</th></thead>
+		<tbody>
+		<% _.each(st_req_entry_users, function(value,key){ %> 
+			<tr data-id=<%= value.user_id %>>
+				<td><%= value.user_name %></td>
+				<td><a class="btn btn-info" href="javascript:void(0)" data-handler="Allow">批准加入</a></td>
+				<td><a class="btn btn-warning" href="javascript:void(0)" data-handler="Reject">拒绝加入</a></td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>
+<% } else { %>
+	<table class="table table-border">
+		<thead><th>成员</th></thead>
+		<tbody>
+		<% _.each(st_members, function(value,key){ %> 
+			<tr>
+				<td><%= value.user_name %></td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>
+<% } %>
